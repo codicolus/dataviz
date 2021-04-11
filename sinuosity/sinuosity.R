@@ -76,7 +76,7 @@ for(i in seq(length(pals))){
   ggsave(paste0("flower_power_", pals[i], ".png"), width = 6, height = 7)
 }
 
-# Discontinuity
+# DISCONTINUITY
 df <- get_data(2000)
 p <- ggplot(df, aes(x, y)) +
   geom_bin2d(show.legend = F, binwidth = 20) +
@@ -97,7 +97,7 @@ p <- ggplot(df, aes(x, y)) +
 p
 ggsave(paste0("discontinuity.png"), width = 6, height = 7)
 
-# Liridum Laradum
+# LIRIDUM LARADUM
 df <- get_data(2000)
 
 p <- ggplot(df, aes(x, y)) +
@@ -119,7 +119,7 @@ p <- ggplot(df, aes(x, y)) +
 p
 ggsave(paste0("liridumlaradum.png"), width = 6, height = 7)
 
-# Cropcircle
+# CROP CIRCLE
 laett <- plot_gg(p, multicore = TRUE, zoom = 0.45, scale = 50, save_height_matrix = T) # 0.5
 
 laett %>% 
