@@ -1,3 +1,13 @@
+# Author: Christoph von Matt
+# Github: @codicolus
+# Created on: 07-04-2021
+#
+# This script is licenced under:
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public Licence (CC-BY-NC-SA)
+# For more information see here: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+
+
 library(ggplot2)
 library(rayshader)
 library(tidyverse)
