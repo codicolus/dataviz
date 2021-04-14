@@ -7,10 +7,8 @@
 # For more information see here: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 
 
-
+# load libraries
 library(ggplot2)
-library(rayshader)
-library(tidyverse)
 library(extrafont)
 
 # load fonts
@@ -32,32 +30,6 @@ get_data <- function(num){
   
   return(data.frame(x, y, color))
 }
-
-
-# Start experimenting 
-df <- get_data(1000)
-
-# base code
-p <- ggplot(df, aes(x, y, -y)) + #color = y
-  #geom_bin2d(show.legend = F, binwidth = 20) + # no bindwidth (colosseum), binwith = 20 (stripes)
-  #geom_point(show.legend = F) +
-  geom_contour(aes(x, y, color)) +
-  scale_color_distiller(palette = "RdBu") +
-  #geom_line(aes(group = y)) +
-  #scale_fill_distiller() + # RdBu, RdPu
-  #scale_fill_gradient(low = "yellow", high = "grey50") +
-  scale_y_continuous(breaks = NULL, expand = c(0,0)) +
-  scale_x_continuous(breaks = NULL, expand = c(0,0)) +
-  xlab(NULL) + ylab(NULL) +
-  coord_polar("y") +
-  theme(
-    plot.background = element_blank(),
-    panel.background = element_blank()
-  )
-p
-
-plot_gg(p, multicore = TRUE, zoom = 0.5, shadow_intensity = 0.1)
-render_snapshot()
 
 
 # FLOWER POWER
@@ -128,12 +100,3 @@ p <- ggplot(df, aes(x, y)) +
   )
 p
 ggsave(paste0("liridumlaradum.png"), width = 6, height = 7)
-
-# CROP CIRCLE
-laett <- plot_gg(p, multicore = TRUE, zoom = 0.45, scale = 50, save_height_matrix = T) # 0.5
-
-laett %>% 
-  sphere_shade(texture = "desert", sunangle = 0, zscale = 0.0001, ) %>%
-  plot_3d(laett, zscale = 2, fov = 0, theta = 90, zoom = 0.6, phi = 90, windowsize = c(1000, 800))
-
-render_snapshot("cropcircle.png", clear = TRUE)
