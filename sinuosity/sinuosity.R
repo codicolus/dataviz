@@ -2,10 +2,11 @@
 # Github: @codicolus
 # Created on: 07-04-2021
 #
-# This script is licenced under:
-# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public Licence (CC-BY-NC-SA)
+######################################################################################################
+# This script is licenced under: CC-BY-NC-SA
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public Licence
 # For more information see here: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-
+######################################################################################################
 
 # load libraries
 library(ggplot2)
